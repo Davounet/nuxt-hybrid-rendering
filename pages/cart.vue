@@ -14,7 +14,7 @@
 <script setup lang="ts">
 const page = 'cart'
 
-const { data: pokemon } = await useAsyncData(() => $fetch(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${utils.random(0, 1281)}`))
+const { data: pokemon } = await useLazyAsyncData(() => $fetch(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${utils.random(0, 1281)}`))
 
 const isAlive = ref('no idea')
 async function callApi() {

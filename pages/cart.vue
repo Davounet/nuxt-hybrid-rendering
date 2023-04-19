@@ -7,14 +7,14 @@
       <button class="bg-gray-200 rounded p-1.5 px-4 hover:bg-gray-300" @click="callApi">Call API</button>
       <p>API alive : {{ isAlive }}</p>
     </div>
-    <pre class="text-xs">{{ pokemon }}</pre>
+    <pre class="text-xs">{{ random }}</pre>
   </div>
 </template>
 
 <script setup lang="ts">
 const page = 'cart'
 
-const { data: pokemon } = await useLazyAsyncData(() => $fetch(`https://pokeapi.co/api/v2/pokemon?limit=1&offset=${utils.random(0, 1281)}`))
+const { data: random } = await useAsyncData(() => $fetch(`https://random-data-api.com/api/users/random_user`))
 
 const isAlive = ref('no idea')
 async function callApi() {

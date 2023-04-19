@@ -14,7 +14,7 @@
 <script setup lang="ts">
 const page = 'cart'
 
-const { data: random } = await useAsyncData(() => $fetch(`https://random-data-api.com/api/users/random_user`))
+const { data: random } = await useLazyAsyncData(() => $fetch(`https://random-data-api.com/api/users/random_user`))
 
 const isAlive = ref('no idea')
 async function callApi() {

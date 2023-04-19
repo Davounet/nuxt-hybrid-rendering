@@ -1,42 +1,8 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 SSG testing
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This repo is deployed [here](https://vermillion-kitten-a87f33.netlify.app/about) through the `yarn run build` command on **netlify**
 
-## Setup
+## Goal
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+The goal is to have the `useAsyncData` calls not to be made on the client, and for them to be cached at build time.
+Currently there are no calls on page load (on `/` and `/about`) but they are made when we navigate between the 2 pages.
